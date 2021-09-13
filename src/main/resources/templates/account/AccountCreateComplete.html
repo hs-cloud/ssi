@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.tymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>アカウント完了</title>
+</head>
+<body>
+	<h3>アカウント作成完了</h3>
+	<p th:if="${param.error}">
+		エラー
+	</p>
+	<div th:object="${createAccount}">
+		<label>ユーザ名：</label>
+		<p th:text="*{accountId}"></p>
+	</div>
+</body>

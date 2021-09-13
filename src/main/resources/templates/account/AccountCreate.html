@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.tymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>アカウント作成</title>
+</head>
+<body>
+	<h3>アカウント作成</h3>
+	<p th:if="${param.error}">
+		エラー
+	</p>
+	<form th:action="@{/account/create}" th:objext=${createAccount} method="POST">
+		<div th:object="${createAccount}">
+			<label>ID：</label>
+			<input type="text" id="accountId" name="accountId" th:field="*{accountId}" />
+			<br>
+			<label>パスワード：</label>
+			<input type="password" id="password" name="password" th:field="*{password}"  />
+			<br>
+			<label>パスワード（確認用）：</label>
+			<input type="password" id="rePassword" name="rePassword" th:field="*{rePassword}" />
+			<br>
+			<button type="submit" value="confirm">確認画面へ</button>
+		</div>
+	</form>
+</body>
